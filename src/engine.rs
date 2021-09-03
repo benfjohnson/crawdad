@@ -1,4 +1,4 @@
-mod lib;
+mod utils;
 
 #[derive(Clone, Copy, PartialEq)]
 pub enum Color {
@@ -30,14 +30,14 @@ impl Game {
         Game {
             turn: Color::White,
             board: [
-                lib::generate_backrank(Color::White),
-                lib::generate_pawns(Color::White),
-                lib::generate_empty(),
-                lib::generate_empty(),
-                lib::generate_empty(),
-                lib::generate_empty(),
-                lib::generate_pawns(Color::Black),
-                lib::generate_backrank(Color::Black),
+                utils::generate_backrank(Color::White),
+                utils::generate_pawns(Color::White),
+                utils::generate_empty(),
+                utils::generate_empty(),
+                utils::generate_empty(),
+                utils::generate_empty(),
+                utils::generate_pawns(Color::Black),
+                utils::generate_backrank(Color::Black),
             ]
         }
     }
