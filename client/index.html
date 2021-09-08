@@ -4,7 +4,17 @@
     </head>
     <body>
         <script type="module">
-            document.body.write("Will eventually figure out how to use WASM here!");
+            import { bootstrap, tryMove } from './interop.js';
+
+            await bootstrap();
+
+            // White to e4!
+            const move = { color: 'White', from: [4, 1], to: [4, 3] };
+            const { success, from_piece, to_piece, turn } = tryMove(move);
+            document.write('Move succeeded?', success);
+            document.write('Old square:', from_piece);
+            document.write('New square:', to_piece.color, to_piece.rank);
+            document.write('Current turn:', turn);
         </script>
     </body>
 </html>
